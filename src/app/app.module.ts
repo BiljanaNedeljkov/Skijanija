@@ -9,10 +9,10 @@ import { SkiResortComponent } from './skiresorts/ski-resort/ski-resort.component
 import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
-  {path:'home', component: HomeComponent},
-  {path:'about',component: AboutComponent},
-  {path:'skiresorts/:id',component: SkiResortComponent},
-  {path:'', redirectTo:'skiresorts', pathMatch:'full'}
+  {path: 'home', component: HomeComponent},
+  {path: 'about', component: AboutComponent},
+  {path: 'skiresorts/:id', component: SkiResortComponent},
+  {path: '', redirectTo: '/skiresort', pathMatch: 'full'}
 ]
 
 @NgModule({

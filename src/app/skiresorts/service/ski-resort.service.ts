@@ -1,8 +1,12 @@
+
+import { Mount } from './../Model/mount.model';
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { Skiresort } from '../Model/ski-resort.model';
-import { map } from 'rxjs/operators';
+
+
 
 
 const baseUrl: string = 'http://localhost:3000/api/skiresorts';
@@ -23,4 +27,13 @@ export class SkiResortService {
       }
     ));
   }
+
+  getMounts(id: number): Observable<Mount> {
+    return this.http.get<Mount>(baseUrl + "/" + id).pipe(map(
+      response => {
+        return new Mount(response);
+      })
+    );
+  }
+
 }

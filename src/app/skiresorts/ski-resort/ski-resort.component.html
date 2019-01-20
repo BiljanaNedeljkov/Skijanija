@@ -1,3 +1,11 @@
-<p>
-  ski-resort works!
-</p>
+<div class="row">
+  <div class="col-4">
+    <img src="{{mounts?.picture}}" class="img-fluid" >
+  </div>
+
+<div class="col-8 text-secondary">
+  <h2 class="text-dark">{{mounts?.name}},<span class="text-secondary" ><small>{{mounts?.country}}</small></span></h2>
+  <p>{{mounts?.description}}</p>
+  <p>Elevation: {{mounts?.base_elevation_m}}, Higest point: {{mounts?.highest_point}}, Top Elevation: {{mounts?.top_elevation_m}}</p>
+</div>
+</div>
