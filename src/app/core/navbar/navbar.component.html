@@ -1,3 +1,18 @@
-<p>
-  navbar works!
-</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+	  <ul class="navbar-nav mr-auto">
+		<li class="nav-item">
+		  <a [routerLink]="['/home']" routerLinkActive="active"  class="nav-link">Home</a>
+		</li>
+		<li class="nav-item" *ngFor="let item of skiresorts">
+		  <a [routerLink]="['/skiresorts' , item._id]" routerLinkActive="active"  class="nav-link">{{item.name}}</a>
+		</li>
+	  </ul>
+	  <ul class="navbar-nav ml-auto">
+		<li class="nav-item">
+		  <a [routerLink]="['/about']" routerLinkActive="active"  class="nav-link">About</a>
+		</li>
+	  </ul>
+	</div>
+  </nav>

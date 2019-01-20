@@ -1,3 +1,5 @@
+import { SkiResortService } from './../../skiresorts/service/ski-resort.service';
+import { Skiresort } from './../../skiresorts/Model/ski-resort.model';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+  skiresorts: Skiresort[];
 
-  constructor() { }
+  constructor(private service:SkiResortService) { }
 
   ngOnInit() {
+    this.service.getSkiresorts().subscribe(data => {
+      this.skiresorts = data;
+    });
   }
 
 }
