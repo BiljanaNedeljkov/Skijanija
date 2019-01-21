@@ -1,3 +1,4 @@
+import { Track } from './../Model/track.model';
 
 import { Mount } from './../Model/mount.model';
 import { Injectable } from '@angular/core';
@@ -34,6 +35,27 @@ export class SkiResortService {
         return new Mount(response);
       })
     );
+  }
+
+  getTracks(id: number, params?): Observable<Track[]> {
+    let queryParams = {};
+
+    if (params) {
+      queryParams = {
+        params: new HttpParams()
+        .set("sort", params.sort || "") 
+ };
+    }
+
+    return this.http
+    .get<Track[]>(baseUrl + "/" + id + "/tracks",queryParams)
+    .pipe(map(
+      data => {
+        let retVal = Array<Track>();
+        data.forEach(item => retVal.push(new Track(item)));
+        return retVal;
+      }
+    ));
   }
 
 }

@@ -7,6 +7,8 @@ import { HomeComponent } from './skiresorts/home/home.component';
 import { AboutComponent } from './skiresorts/about/about.component';
 import { SkiResortComponent } from './skiresorts/ski-resort/ski-resort.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { TracksComponent } from './skiresorts/tracks/tracks.component'
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -21,12 +23,14 @@ const routes: Routes = [
     NavbarComponent,
     HomeComponent,
     AboutComponent,
-    SkiResortComponent
+    SkiResortComponent,
+    TracksComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
