@@ -1,3 +1,4 @@
+import { Weather } from './../Model/weather.model';
 import { Track } from './../Model/track.model';
 
 import { Mount } from './../Model/mount.model';
@@ -6,6 +7,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { Skiresort } from '../Model/ski-resort.model';
+
 
 
 
@@ -53,6 +55,15 @@ export class SkiResortService {
       data => {
         let retVal = Array<Track>();
         data.forEach(item => retVal.push(new Track(item)));
+        return retVal;
+      }
+    ));
+  }
+  getWeathers(id:number): Observable<Weather[]> {
+    return this.http.get<Weather[]>(baseUrl + "/" + id + '/weather').pipe(map(
+      data => {
+        let retVal = Array<Weather>();
+        data.forEach(item => retVal.push(new Weather(item)));
         return retVal;
       }
     ));

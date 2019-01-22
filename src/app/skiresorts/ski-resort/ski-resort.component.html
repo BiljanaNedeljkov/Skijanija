@@ -17,10 +17,11 @@
         <ski-tracks [nesto]='tracks' (sortBy)='changeSort($event)'></ski-tracks>
         </ng-template>
       </ngb-tab>
-      <ngb-tab>
-        <ng-template ngbTabTitle>Wether</ng-template>
-       
-      </ngb-tab>
+      <ngb-tab title="Weather">
+          <ng-template ngbTabContent>
+            <ski-weather [vreme]='weathers'></ski-weather>
+          </ng-template>
+        </ngb-tab>
       <ngb-tab title="Ski pass">
         <ng-template ngbTabContent>
           

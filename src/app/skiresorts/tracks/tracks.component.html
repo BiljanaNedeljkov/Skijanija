@@ -1,34 +1,29 @@
 <div class="row">
-    <div class="col-8">
-  
-  <table class="table">
-    <thead>
-      <tr>
-        
-        <th scope="col">Name</th>
-        <th scope="col">Length(km)</th>
-        <th scope="col">Rating</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let item of nesto" [ngClass]="{'text-danger': item.color === 'red', 'text-primary': item.color === 'blue'}">
-        
-        <td>{{item.name}}</td>
-        <td>{{item.length_km}}</td>
-        <td>{{item.rating}}</td>
-        
-      </tr>
-     
-    </tbody>
-  </table>
+  <div class="col-8">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th>Length (km)</th>
+          <th>Raiting</th>
+        </tr>
+      </thead>
+     <tbody>
+       <tr *ngFor="let item of nesto" [ngClass]="{'text-danger': item.color === 'red', 'text-primary': item.color === 'blue'}">
+         <td>{{item.name}}</td>
+         <td>{{item.length_km}}</td>
+         <td>{{item.rating}}</td>
+       </tr>
+     </tbody>
+    </table>
   </div>
   <div class="col-4">
-  <form>
-    <label for="sort">Sort by </label><br>
-    <select class="form-control input-sm"  name="sort" (change)="changeSort($event.target.value)">
-    <option value="rating">Rating</option>
-    <option value="length_km">Length</option>
-  </select>
-  </form>
+    <form>
+      <label for="sort"><b>Sort by: </b></label><br>
+      <select name="sort" class="form-control" (change)="changeSort($event.target.value)">
+      <option value="rating">Rating</option>
+      <option value="length_km">Length</option>
+    </select>
+    </form>
   </div>
-  </div>
+</div>

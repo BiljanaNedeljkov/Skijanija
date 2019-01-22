@@ -3,6 +3,7 @@ import { SkiResortService } from './../service/ski-resort.service';
 import { Component, OnInit } from '@angular/core';
 import { Mount } from '../Model/mount.model';
 import { ActivatedRoute } from '@angular/router';
+import { Weather } from '../Model/weather.model';
 
 @Component({
   selector: 'ski-ski-resort',
@@ -12,6 +13,7 @@ import { ActivatedRoute } from '@angular/router';
 export class SkiResortComponent implements OnInit {
   mounts: Mount;
   tracks: Track[];
+  weathers: Weather[];
   params = {
     sort: ""
   };
@@ -34,6 +36,11 @@ export class SkiResortComponent implements OnInit {
       this.service.getTracks(id,this.params).subscribe(
         data => {
           this.tracks = data;
+        }
+      );
+      this.service.getWeathers(id).subscribe(
+        data => {
+          this.weathers = data;
         }
       );
     });

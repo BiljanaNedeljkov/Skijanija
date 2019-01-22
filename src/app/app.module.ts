@@ -8,7 +8,9 @@ import { AboutComponent } from './skiresorts/about/about.component';
 import { SkiResortComponent } from './skiresorts/ski-resort/ski-resort.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { TracksComponent } from './skiresorts/tracks/tracks.component'
+import { TracksComponent } from './skiresorts/tracks/tracks.component';
+import { WeatherComponent } from './skiresorts/weather/weather.component';
+import { DayWeatherComponent } from './skiresorts/day-weather/day-weather.component'
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -24,7 +26,9 @@ const routes: Routes = [
     HomeComponent,
     AboutComponent,
     SkiResortComponent,
-    TracksComponent
+    TracksComponent,
+    WeatherComponent,
+    DayWeatherComponent
   ],
   imports: [
     BrowserModule,

@@ -11,6 +11,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class TracksComponent implements OnInit {
   @Input() nesto:Track[];
   @Output() sortBy: EventEmitter<string> = new EventEmitter;
+  
 
   constructor() { }
 
