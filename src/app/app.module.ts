@@ -10,7 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TracksComponent } from './skiresorts/tracks/tracks.component';
 import { WeatherComponent } from './skiresorts/weather/weather.component';
-import { DayWeatherComponent } from './skiresorts/day-weather/day-weather.component'
+import { DayWeatherComponent } from './skiresorts/day-weather/day-weather.component';
+import { SkiPassComponent } from './skiresorts/ski-pass/ski-pass.component'
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -28,7 +29,8 @@ const routes: Routes = [
     SkiResortComponent,
     TracksComponent,
     WeatherComponent,
-    DayWeatherComponent
+    DayWeatherComponent,
+    SkiPassComponent
   ],
   imports: [
     BrowserModule,
