@@ -9,6 +9,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class SkiPassComponent implements OnInit {
   @Input() skipass: Skipass[];
   
+  
   constructor() { }
 
   ngOnInit() {
